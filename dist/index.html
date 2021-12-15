@@ -6,6 +6,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <!-- MAİN SECTİON -->
+    <section class="main-wrap">
+      <!-- Enter the submission -->
+      <article class="question-wrap">
+        <div class="question enter-section">
+          <h1 class="enter-section__header">
+            Avalanche-X: <br />
+            General Proposal Submission
+          </h1>
+          <p class="enter-section__p">
+            Thank you for applying to the Avalanche-X accelerator. Please
+            include all details of your proposal within this form.
+          </p>
+          <div>
+            <div>
+              <button>START</button>
+              <span>press enter ⏎ </span>
+            </div>
+            <div>
+              <span>Takes 7 Minutes</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-clock"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+                />
+                <path
+                  d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- Enter the submission -->
+
+      <!-- QUESTİON -->
+      <article class="question-wrap">
+        <div class="question">
+          <span> 1</span>
+          <div>
+            <button>dagjadtajsfqj</button>
+            <input type="text" />
+          </div>
+        </div>
+      </article>
+      <!-- QUESTİON -->
+
+      <!-- QUESTİON -->
+      <article class="question-wrap">
+        <div class="question">
+          <span> 2</span>
+          <div>
+            <button>dagjadtajssfhsdfhsdhsfqj</button>
+            <input type="text" />
+          </div>
+        </div>
+      </article>
+      <!-- QUESTİON -->
+
+      <!-- QUESTİON -->
+      <article class="question-wrap">
+        <div class="question">
+          <span> 3</span>
+          <div>
+            <button>dagjadtajssfhsfhsfhhsdhdshsfhsdfhsdhsfqj</button>
+            <input type="text" />
+          </div>
+        </div>
+      </article>
+      <!-- QUESTİON -->
+      <div class="w-full"></div>
+
+      <!-- DOODLE -->
+      <div class="doodle-container">
+        <css-doodle>
+          :doodle { @grid: 1x60 / 61.8vmin; } @place-cell: center; @size:
+          calc(@index() * 1.7%); will-change: transform; border-radius: 50%;
+          border: 1px solid transparent; border-left-color: hsl( calc(100 + 5 *
+          @index()), 70%, 68% ); animation: spin calc(@index() * 2s) linear
+          infinite; --f: @rand(360deg); --t: calc(var(--f) + @pick(1turn,
+          -1turn)); @keyframes spin { from { transform: rotate(var(--f)) } to {
+          transform: rotate(var(--t)) } }
+        </css-doodle>
+      </div>
+
+      <!-- DOODLE -->
+    </section>
+    <!-- MAİN SECTİON -->
+
+    <!-- BUTTONS -->
+    <section class="buttons">
+      <button id="up-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-chevron-double-up"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+          />
+        </svg>
+      </button>
+      <button id="down-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-chevron-double-up downwards"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+          />
+        </svg>
+      </button>
+    </section>
+    <!-- BUTTONS -->
+  </body>
 </html>
+<script src="https://unpkg.com/css-doodle@0.23.0/css-doodle.min.js"></script>
+<script src="main.js"></script>
