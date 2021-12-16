@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+.flex-helper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.flex-helper-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -9,6 +23,23 @@ body {
   scroll-behavior: smooth;
   background-color: black;
   font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.error-msg.success {
+  display: none;
+}
+
+.error-msg.error {
+  display: inline-block;
+}
+
+.error-msg-third.success {
+  display: none;
+}
+
+.error-msg-third.error {
+  display: inline-block;
 }
 
 .main-wrap {
@@ -52,7 +83,75 @@ body {
 }
 .enter-section__p {
   color: gray;
-  width: 60%;
+  width: 80%;
+}
+.enter-section__span {
+  font-size: 0.7rem;
+  margin-left: 1rem;
+}
+.enter-section__button {
+  padding: 0.7rem 1.3rem;
+  font-weight: 700;
+  color: #606c6e;
+}
+.enter-section__svg-container {
+  margin-top: 1rem;
+}
+
+.question-first {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  width: 45%;
+}
+
+.question-header {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.question-number {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.form1 {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.question-button {
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #606c6e;
+}
+
+.text-input {
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #807d7d;
+  width: 100%;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 300;
+}
+.text-input::-moz-placeholder {
+  color: #727171;
+}
+.text-input:-ms-input-placeholder {
+  color: #727171;
+}
+.text-input::placeholder {
+  color: #727171;
+}
+.text-input:focus {
+  outline: none;
+  border-bottom: 2px solid #f0e9e9;
 }
 
 .buttons {
@@ -86,5 +185,11 @@ body {
 .doodle-container {
   position: fixed;
   top: 5%;
-  left: 5%;
+  right: 5%;
+}
+
+.second-doodle-container {
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
 }/*# sourceMappingURL=main.css.map */

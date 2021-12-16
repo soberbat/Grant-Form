@@ -1,4 +1,5 @@
 @import "./confing.scss";
+@import "./utils.scss";
 
 $black: rgb(0, 0, 0);
 $gray: rgba(70, 79, 81);
@@ -11,7 +12,28 @@ body {
   scroll-behavior: smooth;
   background-color: $black;
   font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
 }
+
+// HELPERS
+
+.error-msg.success {
+  display: none;
+}
+
+.error-msg.error {
+  display: inline-block;
+}
+
+.error-msg-third.success {
+  display: none;
+}
+
+.error-msg-third.error {
+  display: inline-block;
+}
+
+// HELPERS
 
 .main-wrap {
   display: flex;
@@ -60,7 +82,81 @@ body {
 
   &__p {
     color: gray;
-    width: 60%;
+    width: 80%;
+  }
+
+  &__span {
+    font-size: 0.7rem;
+    margin-left: 1rem;
+  }
+
+  &__button {
+    padding: 0.7rem 1.3rem;
+    font-weight: 700;
+    color: $gray-light;
+  }
+
+  &__svg-container {
+    margin-top: 1rem;
+  }
+}
+
+// QUESTİON SECTİON
+
+.question-first {
+  display: flex;
+
+  justify-content: start;
+  flex-direction: row;
+  width: 45%;
+}
+
+//QUESTİON HEADER
+
+.question-header {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.question-number {
+  display: flex;
+  flex-direction: row;
+
+  gap: 2px;
+}
+
+.form1 {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.question-button {
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: $gray-light;
+}
+//TEXT İNPUT
+
+.text-input {
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgb(128, 125, 125);
+  width: 100%;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 300;
+
+  &::placeholder {
+    color: rgb(114, 113, 113);
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(240, 233, 233);
   }
 }
 
@@ -96,8 +192,17 @@ body {
   }
 }
 
+//DOODLE
 .doodle-container {
   position: fixed;
   top: 5%;
-  left: 5%;
+  right: 5%;
 }
+
+.second-doodle-container {
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
+}
+
+//DOODLE

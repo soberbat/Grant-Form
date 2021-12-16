@@ -20,24 +20,23 @@
       <article class="question-wrap">
         <div class="question enter-section">
           <h1 class="enter-section__header">
-            Avalanche-X: <br />
-            General Proposal Submission
+            Avalanche-X: General <br />
+            Proposal Submission
           </h1>
           <p class="enter-section__p">
             Thank you for applying to the Avalanche-X accelerator. Please
             include all details of your proposal within this form.
           </p>
           <div>
-            <div>
-              <button>START</button>
-              <span>press enter ⏎ </span>
+            <div class="flex-helper">
+              <button class="enter-section__button">START</button>
+              <span class="enter-section__span">press enter ⏎ </span>
             </div>
-            <div>
-              <span>Takes 7 Minutes</span>
+            <div class="flex-helper enter-section__svg-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="10"
+                height="10"
                 fill="currentColor"
                 class="bi bi-clock"
                 viewBox="0 0 16 16"
@@ -49,32 +48,61 @@
                   d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
                 />
               </svg>
+              <span class="enter-section__span">Takes 7 Mins</span>
             </div>
           </div>
         </div>
       </article>
       <!-- Enter the submission -->
 
-      <!-- QUESTİON -->
+      <!-- QUESTİON 1 -->
       <article class="question-wrap">
-        <div class="question">
-          <span> 1</span>
-          <div>
-            <button>dagjadtajsfqj</button>
-            <input type="text" />
+        <div class="question question-first">
+          <div class="question-number">
+            <span>1</span>
+            <span>→</span>
           </div>
+
+          <form class="form1" action="#">
+            <h1 class="question-header">Team / Individual Name*</h1>
+            <input
+              class="text-input"
+              placeholder="Type your answer here..."
+              type="text"
+              id="second-page-input"
+            />
+            <span class="error-msg success">dgkadgkad</span>
+            <div class="">
+              <input class="question-button" type="button" value="OK ✓" />
+              <span class="enter-section__span">press enter ⏎ </span>
+            </div>
+          </form>
         </div>
       </article>
       <!-- QUESTİON -->
 
       <!-- QUESTİON -->
       <article class="question-wrap">
-        <div class="question">
-          <span> 2</span>
-          <div>
-            <button>dagjadtajssfhsdfhsdhsfqj</button>
-            <input type="text" />
+        <div class="question question-first">
+          <div class="question-number">
+            <span>1</span>
+            <span>→</span>
           </div>
+
+          <form class="form2" action="#">
+            <h1 class="question-header">Team / Individual Name*</h1>
+            <input
+              class="text-input"
+              placeholder="Type your answer here..."
+              type="text"
+              id="third-page-input"
+            />
+            <span class="error-msg-third success">dgkadgkad</span>
+            <div class="">
+              <input class="question-button" type="button" value="OK ✓" />
+              <span class="enter-section__span">press enter ⏎ </span>
+            </div>
+          </form>
         </div>
       </article>
       <!-- QUESTİON -->
@@ -96,6 +124,18 @@
       <div class="doodle-container">
         <css-doodle>
           :doodle { @grid: 1x60 / 61.8vmin; } @place-cell: center; @size:
+          calc(@index() * 1.7%); will-change: transform; border-radius: 50%;
+          border: 1px solid transparent; border-left-color: hsl( calc(100 + 5 *
+          @index()), 70%, 68% ); animation: spin calc(@index() * 2s) linear
+          infinite; --f: @rand(360deg); --t: calc(var(--f) + @pick(1turn,
+          -1turn)); @keyframes spin { from { transform: rotate(var(--f)) } to {
+          transform: rotate(var(--t)) } }
+        </css-doodle>
+      </div>
+
+      <div class="second-doodle-container">
+        <css-doodle>
+          :doodle { @grid: 1x60 / 20.8vmin; } @place-cell: center; @size:
           calc(@index() * 1.7%); will-change: transform; border-radius: 50%;
           border: 1px solid transparent; border-left-color: hsl( calc(100 + 5 *
           @index()), 70%, 68% ); animation: spin calc(@index() * 2s) linear
@@ -151,6 +191,12 @@
       </button>
     </section>
     <!-- BUTTONS -->
+
+    <!-- PROGRESS BAR -->
+    <div>
+      <div></div>
+    </div>
+    <!-- PROGRESS BAR -->
   </body>
 </html>
 <script src="https://unpkg.com/css-doodle@0.23.0/css-doodle.min.js"></script>
