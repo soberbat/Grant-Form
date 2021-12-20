@@ -2,22 +2,61 @@ const upButton = document.querySelector("#up-button");
 const downButton = document.querySelector("#down-button");
 const section = document.querySelector(".main-wrap");
 const questionWrap = document.querySelectorAll(".question-wrap");
-let intViewportHeight = window.innerHeight;
-const secondPageİnput = document.querySelector("#second-page-input");
-const thirdPageİnput = document.querySelector("#third-page-input");
-const errorMsg = document.querySelector(".error-msg");
-const errorMsgThird = document.querySelector(".error-msg-third");
-const questionFirst = document.querySelector(".question-first");
 
+let intViewportHeight = window.innerHeight;
+
+// QUESTİONS
+
+const firstPageİnput = document.querySelector("#first-page-input");
+const errorMsgFirst = document.querySelector(".error-msg-first");
+
+const secondPageİnput = document.querySelector("#second-page-input");
+const errorMsgSecond = document.querySelector(".error-msg-second");
+
+const thirdPageİnput = document.querySelector("#third-page-input");
+const errorMsgThird = document.querySelector(".error-msg-third");
+
+const fourthPageİnput = document.querySelector("#fourth-page-input");
+const errorMsgFourth = document.querySelector(".error-msg-fourth");
+
+const questionFirst = document.querySelector(".question-first");
+const forms = document.querySelectorAll(".form");
+
+// QUESTİONS
+
+// PROGRESS BAR
+
+const progressBar = document.querySelector("#progress-bar");
+const progressBarOuter = document.querySelector(".progress-bar");
+let progress = 1;
+
+// PROGRESS BAR
+
+forms.forEach((form) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+});
 let count = 0;
 let pagenum = 0;
 
 function pageUp() {
   pagenum++;
+  progress += 10;
+  progressBar.style.width = `${progress}%`;
+  console.log(pagenum);
+
+  if (pagenum === 1) {
+    console.log("birinci sayfa");
+
+    progressBarOuter.style.opacity = "100";
+  }
 }
 
 function pageDown() {
   pagenum--;
+  progress -= 10;
+  progressBar.style.width = `${progress}%`;
 }
 
 //NAVİGATİON BUTTONS FUNCTİONS
@@ -25,12 +64,12 @@ function pageDown() {
 function Down() {
   questionWrap[count].classList.add("fade");
   window.scrollBy({ top: intViewportHeight, behavior: "smooth" });
-  console.log("aşağı inmesi gerekiyor ama inmiyor");
+
   if (count < questionWrap.length - 1) {
     count++;
+
     setTimeout(pageUp, 1000);
   }
-  console.log(count);
 }
 function Up() {
   if (count === questionWrap.length - 1) {
@@ -50,17 +89,18 @@ downButton.addEventListener("click", Down);
 
 //NAVİGATİON BUTTONS FUNCTİONS
 
-function checkValue(input, key) {
-  if (key === "Enter" && pagenum == 1 && !(input.value === "")) {
-    errorMsg.classList.remove("error");
-    errorMsg.classList.add("success");
+function checkValue(input, key, pagenumm, errormsg) {
+  if (key === "Enter" && pagenum == pagenumm && !(input.value === "")) {
+    errormsg.classList.remove("error");
+    errormsg.classList.add("success");
+
     Down();
-    console.log("down");
   }
 
-  if (key === "Enter" && pagenum == 1 && input.value === "") {
-    errorMsg.classList.remove("success");
-    errorMsg.classList.add("error");
+  if (key === "Enter" && pagenum == pagenumm && input.value === "") {
+    errormsg.classList.remove("success");
+    errormsg.classList.add("error");
+    errormsg.nextElementSibling.classList.add("error");
   }
 
   // console.log(input.value);
@@ -76,11 +116,13 @@ document.addEventListener("keypress", (e) => {
   }
   // FİRT PAGE PRESS ENTER KEY
 
-  // SECOND PAGE PRESS ENTER KEY
+  setTimeout(checkValue(firstPageİnput, e.key, 1, errorMsgFirst), 5000);
 
-  setTimeout(checkValue(secondPageİnput, e.key), 50000);
+  setTimeout(checkValue(secondPageİnput, e.key, 2, errorMsgSecond), 5000);
 
-  // SECOND PAGE PRESS ENTER KEY
+  setTimeout(checkValue(thirdPageİnput, e.key, 3, errorMsgThird), 5000);
+
+  setTimeout(checkValue(fourthPageİnput, e.key, 4, errorMsgFourth), 5000);
 
   // if (e.key === "Enter" && count == 2 && !(thirdPageİnput.value === "")) {
   //   errorMsgThird.classList.remove("error");
@@ -93,5 +135,3 @@ document.addEventListener("keypress", (e) => {
   //   errorMsgThird.classList.add("error");
   // }
 });
-
-console.log(count);

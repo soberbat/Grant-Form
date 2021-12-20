@@ -26,20 +26,71 @@ body {
   box-sizing: border-box;
 }
 
-.error-msg.success {
-  display: none;
+.error-msg-first.success {
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
 }
 
-.error-msg.error {
-  display: inline-block;
+.error-msg-first.error {
+  opacity: 1;
+  transition: all ease-in-out 0.3s;
+}
+
+.error-msg-second.success {
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+}
+
+.error-msg-second.error {
+  opacity: 1;
+  transition: all ease-in-out 0.3s;
 }
 
 .error-msg-third.success {
-  display: none;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
 }
 
 .error-msg-third.error {
+  opacity: 1;
+  transition: all ease-in-out 0.3s;
+}
+
+.error-msg-fourth.success {
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+}
+
+.error-msg-fourth.error {
+  opacity: 1;
+  transition: all ease-in-out 0.3s;
+}
+
+.error-msg {
+  background-color: white;
+  color: black;
+  padding: 0.4rem 1rem;
+  border-radius: 0.2rem;
+  font-weight: 400;
+  font-size: 0.8rem;
+  width: 100%;
   display: inline-block;
+  text-align: center;
+  transition: all ease-in-out 0.3s;
+}
+
+.ok-section {
+  transition: all ease-in-out 0.1s;
+}
+
+.ok-section.error {
+  opacity: 0;
+  transition: all ease-in-out 0.1s;
+}
+
+.ok-section.success {
+  opacity: 1;
+  transition: all ease-in-out 0.1s;
 }
 
 .main-wrap {
@@ -192,4 +243,21 @@ body {
   position: fixed;
   bottom: 5%;
   left: 10%;
+}
+
+.progress-bar-inner {
+  background-color: white;
+  width: 0%;
+  padding: 2px;
+  transition: all ease-out 0.1s;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(94, 92, 92, 0.973);
+  opacity: 0;
+  transition: all ease-out 0.1s;
 }/*# sourceMappingURL=main.css.map */
