@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -26,6 +27,10 @@ body {
   box-sizing: border-box;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .error-msg-first.success {
   opacity: 0;
   transition: all ease-in-out 0.3s;
@@ -49,11 +54,13 @@ body {
 .error-msg-third.success {
   opacity: 0;
   transition: all ease-in-out 0.3s;
+  margin-top: 1rem;
 }
 
 .error-msg-third.error {
   opacity: 1;
   transition: all ease-in-out 0.3s;
+  margin-top: 1rem;
 }
 
 .error-msg-fourth.success {
@@ -66,6 +73,16 @@ body {
   transition: all ease-in-out 0.3s;
 }
 
+.error-msg-fifth.success {
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+}
+
+.error-msg-fifth.error {
+  opacity: 1;
+  transition: all ease-in-out 0.3s;
+}
+
 .error-msg {
   background-color: white;
   color: black;
@@ -73,7 +90,7 @@ body {
   border-radius: 0.2rem;
   font-weight: 400;
   font-size: 0.8rem;
-  width: 100%;
+  width: 50%;
   display: inline-block;
   text-align: center;
   transition: all ease-in-out 0.3s;
@@ -143,7 +160,7 @@ body {
 .enter-section__button {
   padding: 0.7rem 1.3rem;
   font-weight: 700;
-  color: #606c6e;
+  color: #878e8f;
 }
 .enter-section__svg-container {
   margin-top: 1rem;
@@ -153,12 +170,17 @@ body {
   display: flex;
   justify-content: start;
   flex-direction: row;
-  width: 45%;
+  width: 60%;
+  max-width: 750px;
 }
 
 .question-header {
   font-weight: 500;
   font-size: 2rem;
+}
+
+.question-header.secondary {
+  margin-bottom: 0;
 }
 
 .question-number {
@@ -176,7 +198,7 @@ body {
   padding: 0.4rem 0.8rem;
   font-size: 1.2rem;
   font-weight: 800;
-  color: #606c6e;
+  color: #878e8f;
 }
 
 .text-input {
@@ -189,7 +211,7 @@ body {
   width: 100%;
   font-size: 1.8rem;
   color: white;
-  font-weight: 300;
+  font-weight: 200;
 }
 .text-input::-moz-placeholder {
   color: #727171;
@@ -205,10 +227,91 @@ body {
   border-bottom: 2px solid #f0e9e9;
 }
 
+.secondary-text {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #878e8f;
+  font-weight: 300;
+}
+
+.labels-hover {
+  width: 100%;
+  background-color: rgba(63, 62, 62, 0.562);
+  transition: all ease-in-out 0.1s;
+}
+.labels-hover .labels-container {
+  border: #878e8f 0.2px solid;
+  border-radius: 4px;
+  width: 100%;
+  display: inline-block;
+  padding: 2px;
+}
+.labels-hover .labels-container .label {
+  width: 90%;
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: transparent;
+  height: 100%;
+}
+.labels-hover .labels-container .label :hover {
+  background-color: transparent;
+}
+.labels-hover :hover {
+  background-color: rgba(77, 75, 75, 0.767);
+  transition: all ease-in-out 0.1s;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  display: inline-block;
+}
+
+.checkbox:checked:after {
+  content: "✓";
+  font-size: 17px;
+  color: #99a1a7;
+}
+
+.checkbox-choice {
+  padding: 2.5px 5px;
+  background-color: black;
+  border: white 0.2px solid;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 6px 5px;
+  font-size: 12px;
+}
+
+.choices {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-bar-inner {
+  background-color: white;
+  width: 0%;
+  padding: 2px;
+  transition: all ease-out 0.1s;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(63, 62, 62, 0.562);
+  opacity: 0;
+  transition: all ease-out 0.1s;
+}
+
 .buttons {
   position: fixed;
-  bottom: 10%;
-  right: 10%;
+  bottom: 2%;
+  right: 2%;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -227,7 +330,7 @@ body {
 }
 .buttons button:hover {
   box-shadow: 0px 0px 8px 0.5px rgba(158, 157, 157, 0.253);
-  background-color: #606c6e;
+  background-color: #878e8f;
 }
 .buttons button .downwards {
   transform: rotate(180deg);
@@ -245,19 +348,32 @@ body {
   left: 10%;
 }
 
-.progress-bar-inner {
-  background-color: white;
-  width: 0%;
-  padding: 2px;
-  transition: all ease-out 0.1s;
+@-webkit-keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(94, 92, 92, 0.973);
-  opacity: 0;
-  transition: all ease-out 0.1s;
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -3,8 +3,12 @@
 
 $black: rgb(0, 0, 0);
 $gray: rgba(70, 79, 81);
-$gray-light: rgb(96, 108, 110);
-$gray-super-light: rgba(94, 92, 92, 0.973);
+$gray-light: rgb(135, 142, 143);
+$gray-super-light: rgba(63, 62, 62, 0.562);
+$gray-super-light-hover: rgba(77, 75, 75, 0.767);
+
+$transition: all ease-in-out 0.3s;
+$transition-fast: all ease-in-out 0.1s;
 
 body {
   padding: 0;
@@ -17,6 +21,10 @@ body {
 }
 
 // HELPERS
+
+.w-full {
+  width: 100%;
+}
 
 .error-msg-first.success {
   opacity: 0;
@@ -41,11 +49,13 @@ body {
 .error-msg-third.success {
   opacity: 0;
   transition: all ease-in-out 0.3s;
+  margin-top: 1rem;
 }
 
 .error-msg-third.error {
   opacity: 1;
   transition: all ease-in-out 0.3s;
+  margin-top: 1rem;
 }
 
 .error-msg-fourth.success {
@@ -58,6 +68,16 @@ body {
   transition: all ease-in-out 0.3s;
 }
 
+.error-msg-fifth.success {
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+}
+
+.error-msg-fifth.error {
+  opacity: 1;
+  transition: all ease-in-out 0.3s;
+}
+
 .error-msg {
   background-color: white;
   color: black;
@@ -65,7 +85,7 @@ body {
   border-radius: 0.2rem;
   font-weight: 400;
   font-size: 0.8rem;
-  width: 100%;
+  width: 50%;
   display: inline-block;
   text-align: center;
   transition: all ease-in-out 0.3s;
@@ -162,7 +182,8 @@ body {
 
   justify-content: start;
   flex-direction: row;
-  width: 45%;
+  width: 60%;
+  max-width: 750px;
 }
 
 //QUESTİON HEADER
@@ -170,6 +191,10 @@ body {
 .question-header {
   font-weight: 500;
   font-size: 2rem;
+}
+
+.question-header.secondary {
+  margin-bottom: 0;
 }
 
 .question-number {
@@ -202,7 +227,7 @@ body {
   width: 100%;
   font-size: 1.8rem;
   color: white;
-  font-weight: 300;
+  font-weight: 200;
 
   &::placeholder {
     color: rgb(114, 113, 113);
@@ -214,11 +239,105 @@ body {
   }
 }
 
+// SECONDARY TEXT
+
+.secondary-text {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: $gray-light;
+  font-weight: 300;
+}
+
+// CHECKBOX
+
+.labels-hover {
+  width: 100%;
+  background-color: $gray-super-light;
+  transition: $transition-fast;
+
+  .labels-container {
+    border: $gray-light 0.2px solid;
+    border-radius: 4px;
+    width: 100%;
+    display: inline-block;
+    padding: 2px;
+
+    .label {
+      width: 90%;
+      align-items: center;
+      display: inline-flex;
+      justify-content: space-between;
+      background-color: transparent;
+      height: 100%;
+
+      :hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  :hover {
+    background-color: $gray-super-light-hover;
+    transition: $transition-fast;
+  }
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  display: inline-block;
+}
+
+.checkbox:checked:after {
+  content: "\2713";
+  font-size: 17px;
+  color: #99a1a7;
+}
+
+.checkbox-choice {
+  padding: 2.5px 5px;
+  background-color: black;
+  border: white 0.2px solid;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 6px 5px;
+  font-size: 12px;
+}
+
+.choices {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+// CHECKBOX
+
+//PROGRESS BAR
+
+.progress-bar-inner {
+  background-color: white;
+  width: 0%;
+  padding: 2px;
+  transition: all ease-out 0.1s;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $gray-super-light;
+  opacity: 0;
+  transition: all ease-out 0.1s;
+}
+
+//PROGRESS BAR
+
 // Buttons
 .buttons {
   position: fixed;
-  bottom: 10%;
-  right: 10%;
+  bottom: 2%;
+  right: 2%;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -246,6 +365,8 @@ body {
   }
 }
 
+// Buttons
+
 //DOODLE
 .doodle-container {
   position: fixed;
@@ -261,24 +382,28 @@ body {
 
 //DOODLE
 
-//PROGRESS BAR
+// ANİMATİONS
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
 
-.progress-bar-inner {
-  background-color: white;
-  width: 0%;
-  padding: 2px;
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
 
-  transition: all ease-out 0.1s;
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: $gray-super-light;
-  opacity: 0;
-  transition: all ease-out 0.1s;
-}
-
-//PROGRESS BAR
+//ANİMATİONS

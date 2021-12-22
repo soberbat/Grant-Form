@@ -13,11 +13,13 @@ const errorMsgFirst = document.querySelector(".error-msg-first");
 const secondPageİnput = document.querySelector("#second-page-input");
 const errorMsgSecond = document.querySelector(".error-msg-second");
 
-const thirdPageİnput = document.querySelector("#third-page-input");
 const errorMsgThird = document.querySelector(".error-msg-third");
 
 const fourthPageİnput = document.querySelector("#fourth-page-input");
 const errorMsgFourth = document.querySelector(".error-msg-fourth");
+
+const fifthPageİnput = document.querySelector("#fifth-page-input");
+const errorMsgfifth = document.querySelector(".error-msg-fifth");
 
 const questionFirst = document.querySelector(".question-first");
 const forms = document.querySelectorAll(".form");
@@ -31,6 +33,26 @@ const progressBarOuter = document.querySelector(".progress-bar");
 let progress = 1;
 
 // PROGRESS BAR
+
+// CHECKBOX STYLE CHANGE
+
+const checkBoxes = document.querySelectorAll(".checkbox");
+let checked = false;
+checkBoxes.forEach((input) => {
+  input.addEventListener("click", (e) => {
+    if (e.target.checked) {
+      e.target.parentElement.parentElement.style.border = "1px solid white";
+      checked = true;
+    } else {
+      e.target.parentElement.parentElement.style.border =
+        "rgb(96, 108, 110) 0.2px solid";
+
+      checked = false;
+    }
+  });
+});
+
+// CHECKBOX STYLE CHANGE
 
 forms.forEach((form) => {
   form.addEventListener("submit", (e) => {
@@ -89,6 +111,8 @@ downButton.addEventListener("click", Down);
 
 //NAVİGATİON BUTTONS FUNCTİONS
 
+//CHECK ENTER KEY FUNCTİON
+
 function checkValue(input, key, pagenumm, errormsg) {
   if (key === "Enter" && pagenum == pagenumm && !(input.value === "")) {
     errormsg.classList.remove("error");
@@ -102,36 +126,42 @@ function checkValue(input, key, pagenumm, errormsg) {
     errormsg.classList.add("error");
     errormsg.nextElementSibling.classList.add("error");
   }
-
-  // console.log(input.value);
-  // console.log(count);
 }
 
-//ENTER KEY FUNCTİON
+//CHECK ENTER KEY FUNCTİON
+
+//CHECK THİRD PAGE İNPUT
+
+const thirdPage = function (key) {
+  if (key === "Enter" && checked === false && pagenum === 3)
+    errorMsgThird.classList.add("error");
+
+  if (key === "Enter" && checked === true && pagenum === 3) {
+    errorMsgThird.classList.remove("error");
+    Down();
+  }
+};
+
+//CHECK THİRD PAGE İNPUT
+
+//NAVİGATE WİTH ENTER KEY
 
 document.addEventListener("keypress", (e) => {
-  // FİRT PAGE PRESS ENTER KEY
+  // FİRST PAGE PRESS ENTER KEY
   if (e.key === "Enter" && count == 0) {
     Down();
   }
-  // FİRT PAGE PRESS ENTER KEY
+  // FİRST PAGE PRESS ENTER KEY
 
-  setTimeout(checkValue(firstPageİnput, e.key, 1, errorMsgFirst), 5000);
+  setTimeout(checkValue(firstPageİnput, e.key, 1, errorMsgFirst), 1000); //FİRST QUESTİON
 
-  setTimeout(checkValue(secondPageİnput, e.key, 2, errorMsgSecond), 5000);
+  setTimeout(checkValue(secondPageİnput, e.key, 2, errorMsgSecond), 1000); //SECOND QUESTİON
 
-  setTimeout(checkValue(thirdPageİnput, e.key, 3, errorMsgThird), 5000);
+  thirdPage(e.key); //THİRD QUESTİON
 
-  setTimeout(checkValue(fourthPageİnput, e.key, 4, errorMsgFourth), 5000);
+  setTimeout(checkValue(fourthPageİnput, e.key, 4, errorMsgFourth), 1000); //FOURTH QUESTİON
 
-  // if (e.key === "Enter" && count == 2 && !(thirdPageİnput.value === "")) {
-  //   errorMsgThird.classList.remove("error");
-  //   errorMsgThird.classList.add("success");
-  //   Down();
-  // }
-
-  // if (e.key === "Enter" && count == 2 && thirdPageİnput.value === "") {
-  //   errorMsgThird.classList.remove("success");
-  //   errorMsgThird.classList.add("error");
-  // }
+  setTimeout(checkValue(fifthPageİnput, e.key, 5, errorMsgfifth), 1000); //FİFTH QUESTİON
 });
+
+//NAVİGATE WİTH ENTER KEY
