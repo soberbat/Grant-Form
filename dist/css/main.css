@@ -362,6 +362,17 @@ body {
   gap: 12px;
 }
 
+.last-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.last-page-container h1 {
+  font-size: 5rem;
+  margin-bottom: 0.2rem;
+}
+
 .progress-bar-inner {
   background-color: white;
   width: 0%;
@@ -463,5 +474,13 @@ body {
 
   .text-input::placeholder {
     font-size: 20px;
+  }
+
+  .last-page-container {
+    text-align: center;
+  }
+  .last-page-container h1 {
+    font-size: 3rem;
+    margin-bottom: 0.2rem;
   }
 }/*# sourceMappingURL=main.css.map */

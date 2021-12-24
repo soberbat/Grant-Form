@@ -382,6 +382,22 @@ body {
 }
 // CHECKBOX
 
+//LAST PAGE
+.last-page-container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  text-align: left;
+
+  h1 {
+    font-size: 5rem;
+
+    margin-bottom: 0.2rem;
+  }
+}
+//LAST PAGE
+
 //PROGRESS BAR
 
 .progress-bar-inner {
@@ -486,6 +502,16 @@ body {
   .text-input {
     &::placeholder {
       font-size: 20px;
+    }
+  }
+
+  .last-page-container {
+    text-align: center;
+
+    h1 {
+      font-size: 3rem;
+
+      margin-bottom: 0.2rem;
     }
   }
 }

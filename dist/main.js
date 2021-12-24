@@ -110,6 +110,18 @@ function pageDown() {
   progressBar.style.width = `${progress}%`;
 }
 
+//SUBMİSSİON COMPLETED
+
+const completed = function () {
+  if (pagenum == 10) {
+    console.log("sonsayfa");
+    upButton.style.opacity = "0";
+    downButton.style.opacity = "0";
+  }
+};
+
+//SUBMİSSİON COMPLETED
+
 //NAVİGATİON BUTTONS FUNCTİONS
 
 function Down() {
@@ -118,8 +130,8 @@ function Down() {
 
   if (count < questionWrap.length - 1) {
     count++;
-
     setTimeout(pageUp, 1000);
+    setTimeout(completed, 1200);
   }
 }
 function Up() {
@@ -137,20 +149,6 @@ function Up() {
 }
 upButton.addEventListener("click", Up);
 downButton.addEventListener("click", Down);
-
-//SUBMİSSİON COMPLETED
-
-const completed = function () {
-  if (pagenum === 10) {
-    upButton.style.opacity = "0";
-    downButton.style.opacity = "0";
-    console.log("sonsayfa");
-  }
-  console.log(pagenum);
-};
-
-completed();
-//SUBMİSSİON COMPLETED
 
 //NAVİGATİON BUTTONS FUNCTİONS
 
@@ -187,7 +185,10 @@ const ninethPage = function (key) {
 const checkSixthPage = function (key) {
   sixthPageİnput.addEventListener("input", (e) => {
     let parsed = parseInt(e.target.value);
+
     if (isNaN(parsed)) {
+      console.log("neden çalışmıyor??");
+      errorMsgSixth.innerText = "Numbers only please";
       questionSixth.classList.toggle("shake");
       errorMsgSixth.classList.add("error");
     } else {
@@ -231,7 +232,6 @@ function checkValue(input, key, pagenumm, errormsg) {
   if (key === "Enter" && pagenum == pagenumm && !(input.value === "")) {
     errormsg.classList.remove("error");
     errormsg.classList.add("success");
-
     Down();
   }
 
